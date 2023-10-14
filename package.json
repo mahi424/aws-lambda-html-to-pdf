@@ -1,0 +1,15 @@
+{
+  "name": "wkhtmltopdf-aws-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mahaveer Chouhan <mahi424@users.noreply.github.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^6.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+service: html-to-pdf-converter
+
+
+provider:
+  name: aws
+  runtime: python3.8 # Ensure to use the version you’re working with
+  region: ap-south-1
+  
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+      Resource: "arn:aws:s3:::*/*"
+
+
+plugins:
+  - serverless-dotenv-plugin
+
+
+functions:
+  html-to-pdf-converter:
+    handler: handler.lambda_handler
+    layers:
+      - arn:aws:lambda:ap-south-1:<AWS_ACCOUNT_ID>:layer:wkhtmltox:1
+    events:
+      - http:
+          path: /
+          method: post

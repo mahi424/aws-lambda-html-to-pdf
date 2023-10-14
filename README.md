@@ -20,3 +20,16 @@ npm i
 npm i serverless -g
 serverless deploy
 ```
+
+# Test
+```sh
+curl --location 'LAMBDA_URL' \
+--header 'Content-Type: application/json' \
+--data '{
+    "html": "</html>Sample HTML</html>",
+    "filename": "generated-pdf.pdf",
+    "path":"test",
+    "bucket": "pdf-bucket"
+}'
+
+```
